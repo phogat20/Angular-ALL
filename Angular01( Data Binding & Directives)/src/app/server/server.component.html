@@ -1,0 +1,15 @@
+<!-- 
+    Interpolation: 
+    -- Interpolation is a one-way binding that allows you to embed dynamic values in the view. 
+    -- It is denoted by double curly braces {{ }}. The value of the expression inside the curly braces is evaluated and inserted into the DOM at the location of the interpolation. 
+-->
+
+<!-- ngStyle = Dynamically apply styles to an HTML element based on certain conditions or expressions.-->
+
+
+<!-- ngClass = Dynamically add or remove CSS classes to an HTML element based on certain conditions or expressions. -->
+
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: serverStatus === 'online'}">
+    My {{'server'}} ID is {{serverID}} and server status is {{getServerStatus()}}
+</p>
+

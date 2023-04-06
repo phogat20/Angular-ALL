@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<p> Data Binding!!!!!</p>
+
+<label for="">Server Name</label>
+<!-- EVENT BINDING USING $event -->
+<!-- 
+$event = is a reserved keyword that refers to the event object that is passed as an argument to an event handler function. 
+-->
+
+<!-- <input type="text" class="form-control"
+(input)="onUpdateServerName($event)"> -->
+<!-- <p>Server Name {{serverName}}</p> -->
+
+<!-- TWO-WAY BINDING -->
+<input
+ type="text" 
+ class="form-control" 
+ [(ngModel)]="serverName">
+
+
+
+<!-- <p>Server Name is : {{serverName}}</p> -->
+
+<!-- EVENT BINDING, PROPERTY BINDING -->
+<button class="btn btn-primary" [disabled]="!allowNewServers"
+(click)="onCreateServer()">add servers</button>
+<!-- <p>{{ serverCreationStatus }}</p>
+ -->
+
+ <!-- NG IF -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<!-- NG-template = the part we want to show conditionally --- #localReference -->
+<ng-template #noServer>
+  <p>  No server was created!</p>
+</ng-template>
+
+
+<!-- ()
+- Event binding:  is the process of attaching an event listener to a DOM element, so that it can respond to user events such as clicks, mouse movements, keypresses, and so on. 
+- Event binding is important in creating interactive web applications because it allows you to trigger specific actions in response to user actions.
+-->
+
+<!-- [] Property binding: Property binding allows you to set the value of a property of a DOM element. It is a one-way binding, which means changes to the component property will update the view, but changes to the view will not update the component property. -->
+
+
+<!-- ngfor 
+  --  Display a list of items by repeating a section of HTML code for each item in the list. 
+-->
+<app-server *ngFor="let server of servers"></app-server>
