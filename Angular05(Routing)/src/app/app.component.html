@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <!-- routerLink -- directive is used to create links that allow users to navigate between different routes within an application. -->
+
+        <!-- routerLinkActive -- directive is used to add a CSS class to an element when the corresponding route is active. This allows you to style links or menu items based on the user's current location within the application. -->
+
+        <!-- routerLinkActiveOptions directive is used in conjunction with the routerLinkActive directive to control the behavior of the active CSS class applied to a link when the corresponding route is active. -->
+
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/">Home</a>
+        </li>
+        <li role="presentation" routerLinkActive="active"><a routerLink="servers">Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a [routerLink]="['users']">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- <app-home></app-home> -->
+      <!--Special Directive = router-outlet is a directive that acts as a placeholder for views to be displayed based on the current route. When a user navigates to a new route, the Angular router dynamically replaces the content within the router-outlet with the appropriate component or view associated with that route. -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>
+<!-- Paths -->
+<!-- absolute paths and relative paths. -->
+<!-- An absolute path starts with a forward slash / and specifies the full path from the root of the application. -->
+<!--  relative path, on the other hand, does not start with a forward slash and specifies a path relative to the current route or location within the application.  -->
